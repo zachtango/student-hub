@@ -1,0 +1,24 @@
+{
+  "name": "TAMS_Alexa_App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "ask-sdk-core": "^2.6.0",
+    "ask-sdk-model": "^1.18.0",
+    "aws-sdk": "^2.326.0",
+    "amazon-date-parser": "^0.3.0",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git-codecommit.us-east-1.amazonaws.com/v1/repos/916e0ac7-e091-4e2b-8961-a1d4d0cdf259"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
