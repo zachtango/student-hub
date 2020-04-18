@@ -40,7 +40,7 @@ class Event{
 async function upcomingEventsHandler(handlerInput){
     const club = handlerInput.requestEnvelope.intent.slots.club.value; 
     //const club = 'CSO';
-    
+    /*
     let events = null;
     await fetch(url + `${club}.json`)
     .then(res => res.text())
@@ -84,8 +84,10 @@ async function upcomingEventsHandler(handlerInput){
             //console.log('more than 2 weeks away');
         }
     });
+    */
+    //let speakOutput = format(club, filteredEvents);
     
-    let speakOutput = format(club, filteredEvents);
+    let speakOutput = club;
     return handlerInput.responseBuilder()
         .speakOutput(speakOutput)
         .getResponse();
