@@ -40,7 +40,7 @@ function PointsGetter(infraction) {
         case 'alcohol_or_drugs':
         case 'law_violation':
         case 'off_limits_areas':
-            return '100 points';
+            return '100 points; typically an automatic dismissal.';
         case 'general_curfew_violation':
             return 'anywhere from 10 to 90 points, depending on how late you are.';
         default:

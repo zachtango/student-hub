@@ -8,6 +8,7 @@ const DiscoveryIntent = require('./handlers/discovery_intent');
 const DisciplinaryPointsIntent = require('./handlers/disciplinary_points_intent');
 const RoomAvailableHandler = require('./handlers/room_available_handler');
 const UpcomingEventsHandler = require('./handlers/upcoming_events_handler');
+const LevelXViolationIntent = require('./handlers/level_x_violation_intent');
 const messages = require('./messages');
 
 const LaunchRequestHandler = {
@@ -79,6 +80,8 @@ const IntentHandler = {
             return UpcomingEventsHandler(handlerInput);
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'DisciplinaryPointsIntent'){
             return DisciplinaryPointsIntent(handlerInput);
+        } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'LevelXViolationIntent'){
+            return LevelXViolationIntent(handlerInput);
         }
     }
 }
@@ -121,7 +124,7 @@ const ErrorHandler = {
     },
     handle(handlerInput, error) {
         console.log(`~~~~ Error handled: ${error.stack}`);
-        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
+        const speakOutput = `Sorry, I had trouble doing what you asked. Please try again, or contact the developers for assistance.`;
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
