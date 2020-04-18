@@ -125,7 +125,7 @@ const ErrorHandler = {
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
-            .reprompt(speakOutput)
+            // .reprompt(speakOutput) // this is annoying
             .getResponse();
     }
 };
