@@ -4,10 +4,8 @@ const url = 'https://tamsinfo-b33c7.firebaseio.com/roomAvailability.json';
 
 
 async function roomAvailableHandler(handlerInput){
-    //const room = handlerInput.requestEnvelope.request.intent.slots.room.value;
+    const room = handlerInput.requestEnvelope.request.intent.slots.room.value;
     
-    const room = 'kitchenette';
-
     let key = null;
     if(room === 'kitchenette'){
         key = 'kitchenette';
