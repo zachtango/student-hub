@@ -104,6 +104,38 @@
             "Get discovery park bus time from {bus_location} ",
             "Get discovery park bus at {time}"
           ]
+        },
+        {
+          "name": "UpcomingEventsIntent",
+          "slots": [
+            {
+              "name": "club",
+              "type": "tams_club"
+            }
+          ],
+          "samples": [
+            "what are the upcoming events for {club}"
+          ]
+        },
+        {
+          "name": "DisciplinaryPointsIntent",
+          "slots": [
+            {
+              "name": "infraction",
+              "type": "infraction",
+              "samples": [
+                "Get number of points for being late to curfew."
+              ]
+            }
+          ],
+          "samples": [
+            "Get number of points for {infraction}",
+            "How much points for {infraction}",
+            "Disciplinary points for {infraction}",
+            "Points for {infraction}",
+            "How many points for {infraction}",
+            "How many points would I get docked for {infraction}"
+          ]
         }
       ],
       "types": [
@@ -245,6 +277,55 @@
             }
           ],
           "name": "bus_location"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "sports club",
+                "synonyms": [
+                  "sports"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "JETS",
+                "synonyms": [
+                  "jets"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "RO",
+                "synonyms": [
+                  "research organization",
+                  "research club"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "CSO",
+                "synonyms": [
+                  "computer science organization",
+                  "computer club"
+                ]
+              }
+            }
+          ],
+          "name": "tams_club"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "Being fifteen minutes late for curfew"
+              }
+            }
+          ],
+          "name": "infraction"
         }
       ]
     },
@@ -292,6 +373,22 @@
               "prompts": {}
             }
           ]
+        },
+        {
+          "name": "DisciplinaryPointsIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "infraction",
+              "type": "infraction",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.244762000786.1306732839425"
+              }
+            }
+          ]
         }
       ],
       "delegationStrategy": "ALWAYS"
@@ -314,8 +411,17 @@
             "value": "Please specify something like a cafeteria, a library, Pohl, or C.V.S"
           }
         ]
+      },
+      {
+        "id": "Elicit.Slot.244762000786.1306732839425",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify an infraction you want to find the points for. "
+          }
+        ]
       }
     ]
   },
-  "version": "37"
+  "version": "47"
 }
