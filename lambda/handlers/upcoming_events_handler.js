@@ -89,7 +89,7 @@ async function upcomingEventsHandler(handlerInput){
     
     let speakOutput = club;
     return handlerInput.responseBuilder()
-        .speakOutput(speakOutput)
+        .speak(speakOutput)
         .getResponse();
 }
 /*
