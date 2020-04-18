@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const url = 'https://tamsinfo-b33c7.firebaseio.com/clubEvents/';
-/*
+
 class Event{
     constructor(name, date, weekAway){
         this.name = name;
@@ -36,11 +36,13 @@ class Event{
         }
     }
 }
-*/
+
 async function upcomingEventsHandler(handlerInput){
     const club = handlerInput.requestEnvelope.request.intent.slots.club.value;
     //const club = 'CSO';
-    /*
+    
+    
+    
     let events = null;
     await fetch(url + `${club}.json`)
     .then(res => res.text())
@@ -84,7 +86,7 @@ async function upcomingEventsHandler(handlerInput){
             //console.log('more than 2 weeks away');
         }
     });
-    */
+    
     //let speakOutput = format(club, filteredEvents);
     
     let speakOutput = club;
@@ -92,7 +94,7 @@ async function upcomingEventsHandler(handlerInput){
         .speak(speakOutput)
         .getResponse();
 }
-/*
+
 function format(club, events){
     let word = 'next next';
     
@@ -105,6 +107,6 @@ function format(club, events){
     }
 
     return speakOutput;
-}*/
+}
 
 module.exports = upcomingEventsHandler;
