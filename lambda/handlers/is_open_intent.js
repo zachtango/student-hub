@@ -7,7 +7,8 @@ function isOpenIntent(handlerInput) {
 
     console.log(`What I got from the slot is ${location}`);
     console.log(`Here is the json for slots: ${Object.keys(handlerInput.requestEnvelope.request.intent.slots.location)}`);
-    
+    console.log(`Could this be it: ${handlerInput.requestEnvelope.request.intent.slots.location.resolutions.resolutionsPerAuthority[0].values[0].value.id}`);
+
 
     let date = Date();
     date = date.split(" ");
