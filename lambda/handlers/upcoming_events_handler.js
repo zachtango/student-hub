@@ -51,7 +51,6 @@ async function upcomingEventsHandler(handlerInput){
         club = 'sports';
     }
     
-    
     let events = null;
     await fetch(url + `${club}.json`)
     .then(res => res.text())
@@ -59,7 +58,11 @@ async function upcomingEventsHandler(handlerInput){
         events = JSON.parse(body);
     });
 
-    console.log(Object.keys(events));
+    if(events === null){
+        
+    }
+    
+    //console.log(Object.keys(events));
     
     let now = new Date();
     let fortnightAway = new Date(Date.now() + 12096e5);
