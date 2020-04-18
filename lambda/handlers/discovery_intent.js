@@ -15,6 +15,11 @@ function convertTime(time) {
     return convertedTime;
 }
 
+function timePrettifier(time) {
+    time = time.split(":");
+    return `${time[0]} ${time[1]}`;
+}
+
 /**
  * Returns the next union bus time as a string.
  * @param time An already converted time float
@@ -71,14 +76,16 @@ function DiscoveryIntent(handlerInput) {
     if (location == 'main') {
         let nextTime = getNextUnionBus(convertedTime);
         console.log(`Got next time as ${nextTime}`);
-        speakOutput = `The next bus to Discovery Park leaves the union at ${nextTime}`;
+        nextTime = timePrettifier(nextTime);
+        speakOutput = `The next bus to Discovery Park leaves the union at ${nextTime}. `;
     } else if (location == 'd_park') {
         let nextTime = getNextDiscoveryParkBus(convertedTime);
         console.log(`Got next time as ${nextTime}`);
-        speakOutput = `The next bus departs for the union at ${nextTime}`;
+        nextTime = timePrettifier(nextTime);
+        speakOutput = `The next bus departs for the union at ${nextTime}. `;
     } else {
         console.log(`ERROR: Neither main nor d_park were specified, somehow.`);
-        speakOutput = "Sorry, I did not understand you.";
+        speakOutput = "Sorry, I did not understand you. ";
     }
 
 
