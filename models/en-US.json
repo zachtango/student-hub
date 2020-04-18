@@ -48,10 +48,50 @@
             "Get curfew at {date}",
             "What is curfew {date}"
           ]
+        },
+        {
+          "name": "IsOpenIntent",
+          "slots": [
+            {
+              "name": "location",
+              "type": "tams_location"
+            }
+          ],
+          "samples": [
+            "is {location} open now",
+            "is {location} open"
+          ]
         }
       ],
-      "types": []
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "bruce",
+                "synonyms": [
+                  "bruce cafeteria",
+                  "bruceteria"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "pohl",
+                "synonyms": [
+                  "recreational center",
+                  "rec",
+                  "rec center",
+                  "pohl",
+                  "pool"
+                ]
+              }
+            }
+          ],
+          "name": "tams_location"
+        }
+      ]
     }
   },
-  "version": "8"
+  "version": "20"
 }
