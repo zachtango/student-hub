@@ -1,4 +1,5 @@
 const isOpen = require('../utils/open_times')
+const UTCtoCST = require('../utils/UTCtoCST');
 
 function isOpenIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
@@ -17,7 +18,7 @@ function isOpenIntent(handlerInput) {
     let dayLetters = date[0].substring(0,2).toLowerCase(); // first two letters of current day
     let hours = date[4].substring(0,2);
     let minutes = date[4].substring(3,5);
-    let fractionTime = Number(hours) + (Number(minutes) * 100/60) / 100; // this converts, say, 12:30 into 12.5
+    let fractionTime = UTCtoCST(Number(hours)) + (Number(minutes) * 100/60) / 100; // this converts, say, 12:30 into 12.5
 
     console.log(`Calling isOpen(${location}, ${dayLetters}, ${fractionTime}). `);
     const locationIsOpen = isOpen(location, dayLetters, fractionTime);

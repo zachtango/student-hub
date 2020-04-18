@@ -1,6 +1,48 @@
 const AmazonDateParser = require('../utils/amazon_date_converter');
 const UTCtoCST = require('../utils/UTCtoCST');
 
+// I'm just going to hard-code this assuming people will ask it primarily on week days
+// Trying to find the weekend schedule is a pain
+
+const unionDepartureTimes = ["6:30", "7:30", "8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "13:00", "13:30", "14:00", "14:30", "15:00", "15:30", "16:00", "16:30", "17:00", "17:33", "19:13", "20:56", "22:36"]
+const discoveryParkDepartureTimes = ["6:46", "7:46", "8:26", "8:56", "9:26", "9:56", "10:26", "10:56", "11:26", "11:56", "12:26", "12:56", "13:26", "13:56", "14:26", "14:56", "15:26", "15:56", "16:26", "16:56", "17:26", "17:57", "19:37", "21:20", "23:00"]
+
+// console.log(`${unionDepartureTimes.length} vs ${discoveryParkDepartureTimes.length}`)
+
+function convertTime(time) {
+    time = time.split(":");
+    let convertedTime = Number(time[0]) + (Number(time[1]) * (100/60)) /100;
+    return convertedTime;
+}
+
+/**
+ * Returns the next union bus time as a string.
+ * @param time An already converted time float
+ */
+function getNextUnionBus(time) {
+    for (departureTime of unionDepartureTimes) {
+        if (time < convertTime(departureTime)) {
+            return departureTime;
+        }
+    }
+    return "no more buses today"
+}
+
+/**
+ * Returns the next D Park bus time as a string.
+ * @param time An already converted time float
+ */
+function getNextDiscoveryParkBus(time) {
+    for (departureTime of discoveryParkDepartureTimes) {
+        if (time < convertTime(departureTime)) {
+            return departureTime;
+        }
+    }
+    return "no more buses today"
+}
+
+// console.log(getNextUnionBus(17.5))
+
 function DiscoveryIntent(handlerInput) {
     let speakOutput = "Speak output is not modified in Discovery Intent. ";
     let speakAddition = ""; // Use this to add any additional content you want Alexa to say
@@ -25,6 +67,20 @@ function DiscoveryIntent(handlerInput) {
     time = String(time);
     let convertedTime = UTCtoCST(Number(time.substring(0,2))) + (Number(time.substring(3,5)) * 100/60) / 100.0;
     console.log(`Got converted time as ${convertedTime}`);
+
+    if (location == 'main') {
+        let nextTime = getNextUnionBus(convertedTime);
+        console.log(`Got next time as ${nextTime}`);
+        speakOutput = `The next bus to Discovery Park leaves the union at ${nextTime}`;
+    } else if (location == 'd_park') {
+        let nextTime = getNextDiscoveryParkBus(convertedTime);
+        console.log(`Got next time as ${nextTime}`);
+        speakOutput = `The next bus departs for the union at ${nextTime}`;
+    } else {
+        console.log(`ERROR: Neither main nor d_park were specified, somehow.`);
+        speakOutput = "Sorry, I did not understand you.";
+    }
+
 
     return handlerInput.responseBuilder
         .speak(speakOutput + speakAddition)
