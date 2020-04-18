@@ -68,6 +68,8 @@ const IntentHandler = {
         }
         else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'IsOpenIntent') {
             return IsOpenIntent(handlerInput);
+        } else if(Alexa.getIntentName(handlerInput.requestEnvelope) === 'RoomAvailableIntent'){
+            return RoomAvailableHandler(handlerInput);
         }
     }
 }
