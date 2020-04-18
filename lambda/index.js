@@ -3,13 +3,14 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 const CurfewIntent = require('./handlers/curfew_intent');
+const messages = require('./messages');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        const speakOutput = messages.HELLO_MESSAGE;
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
