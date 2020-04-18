@@ -6,7 +6,7 @@ const CurfewIntent = require('./handlers/curfew_intent');
 const IsOpenIntent = require('./handlers/is_open_intent');
 const DiscoveryIntent = require('./handlers/discovery_intent');
 //const RoomAvailableHandler = require('./handlers/room_available_handler');
-//const UpcomingEventsHandler = require('./handlers/upcoming_events_handler');
+const UpcomingEventsHandler = require('./handlers/upcoming_events_handler');
 const messages = require('./messages');
 
 const LaunchRequestHandler = {
@@ -75,7 +75,7 @@ const IntentHandler = {
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'DiscoveryIntent') {
             return DiscoveryIntent(handlerInput);
         } else if (Alexa.getIntentName(this.handlerInput.requestEnvelope) === 'UpcomingEventsHandler'){
-            //return UpcomingEventsHandler(handlerInput);
+            return UpcomingEventsHandler(handlerInput);
         }
     }
 }
