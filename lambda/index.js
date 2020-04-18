@@ -75,7 +75,7 @@ const IntentHandler = {
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'DiscoveryIntent') {
             return DiscoveryIntent(handlerInput);
         } else if (Alexa.getIntentName(this.handlerInput.requestEnvelope) === 'UpcomingEventsHandler'){
-            //return UpcomingEventsHandler(handlerInput);
+            return UpcomingEventsHandler(handlerInput);
         }
     }
 }
