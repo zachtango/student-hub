@@ -88,7 +88,7 @@ async function upcomingEventsHandler(handlerInput){
     //let speakOutput = format(club, filteredEvents);
     
     let speakOutput = club;
-    return handlerInput.responseBuilder()
+    return handlerInput.responseBuilder
         .speak(speakOutput)
         .getResponse();
 }
