@@ -21,23 +21,27 @@ function CurfewIntent(handlerInput) {
         console.log(`Date retrieved as AMAZON.DATE: ${date}`);
     }
 
-    let parsedDate = AmazonDateParser(date);
+    let parsedDate = new AmazonDateParser(date);
+    console.log(`Parsed date looks like this: ${parsedDate}`);
     let startDate = parsedDate.startDate; // we will only work with the user-specified start date
+    startDate = String(startDate);
+    console.log(`\nJust casted startDate to a string, it looks like this: ${startDate}`);
     let dateLetters = startDate.substring(0,2);
+
     switch(dateLetters) {
         case SHORTENED_DAYS.SUNDAY:
         case SHORTENED_DAYS.MONDAY:
         case SHORTENED_DAYS.TUESDAY:
         case SHORTENED_DAYS.WEDNESDAY:
         case SHORTENED_DAYS.THURSDAY:
-        speakOutput = "Curfew is 11:00 P. M.";
+            speakOutput = "Curfew is 11:00 P. M.";
         break;
         case SHORTENED_DAYS.FRIDAY:
         case SHORTENED_DAYS.SATURDAY:
-        speakOutput = "Curfew is at 1:00 A. M.";
+            speakOutput = "Curfew is at 1:00 A. M.";
         break;
         default:
-        speakOutput = "Sorry, I don't know the curfew at this date.";
+            speakOutput = "Sorry, I don't know the curfew at this date.";
         break;
     }
 
@@ -47,7 +51,7 @@ function CurfewIntent(handlerInput) {
         .getResponse();
 }
 
-
-// console.log("Hello".substring(0,2))
+let x = AmazonDateParser("PRESENT_REF")
+console.log(String(x.startDate))
 
 module.exports = CurfewIntent;
