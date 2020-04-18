@@ -137,7 +137,7 @@ function format(club, events){
         if(events[i].weekAway){
             word = 'next';
         }
-        speakOutput += `There is the ${events[i].name} event ${word} ${events[i].day} at ${hours}:${events[i].date.getMinutes()} ${m}. `
+        speakOutput += `There is the ${events[i].name} event ${word} ${events[i].day} at ${hours}:${minutes} ${m}. `
     }
 
     return speakOutput;
