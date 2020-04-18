@@ -43,9 +43,13 @@ function PointsGetter(infraction) {
             return '100';
         case 'general_curfew_violation':
             return 'anywhere from 10 to 90 points, depending on how late you are.';
+        default:
+            console.log(`Unknown value sent to points-getter.`)
+            return 'unknown';
     }
 }
 
+// console.log(PointsGetter('fighting'));
 
 
 module.exports = PointsGetter;
