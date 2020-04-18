@@ -126,6 +126,14 @@ function format(club, events){
             m = 'AM';
         }
         
+        let minutes = null;
+        if(events[i].date.getMinutes < 10){
+            minutes = '0' + events[i].date.getMinutes;
+        } else{
+            minutes = events[i].date.getMinutes;
+        }
+        
+        
         if(events[i].weekAway){
             word = 'next';
         }
