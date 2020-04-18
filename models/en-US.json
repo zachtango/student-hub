@@ -54,7 +54,12 @@
           "slots": [
             {
               "name": "location",
-              "type": "tams_location"
+              "type": "tams_location",
+              "samples": [
+                "Is Pohl open",
+                "Is Bruceteria open",
+                "Is Maple open"
+              ]
             }
           ],
           "samples": [
@@ -66,6 +71,65 @@
       "types": [
         {
           "values": [
+            {
+              "name": {
+                "value": "sycamore",
+                "synonyms": [
+                  "sycamore library"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "willis",
+                "synonyms": [
+                  "willis library"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "cvs",
+                "synonyms": [
+                  "C. V. S."
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "champs",
+                "synonyms": [
+                  "champs cafeteria"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "west",
+                "synonyms": [
+                  "west hall",
+                  "west cafeteria",
+                  "kitchen west"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "maple",
+                "synonyms": [
+                  "maple cafeteria",
+                  "maple hall"
+                ]
+              }
+            },
+            {
+              "name": {
+                "value": "kerr",
+                "synonyms": [
+                  "kerr cafeteria"
+                ]
+              }
+            },
             {
               "name": {
                 "value": "bruce",
@@ -91,7 +155,54 @@
           "name": "tams_location"
         }
       ]
-    }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "IsOpenIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "location",
+              "type": "tams_location",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.461074647231.950367269801"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.461074647231.950367269801.1409568674263"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.461074647231.950367269801",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify a common TAMS location."
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.461074647231.950367269801.1409568674263",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Please specify something like a cafeteria, a library, Pohl, or C.V.S"
+          }
+        ]
+      }
+    ]
   },
-  "version": "20"
+  "version": "22"
 }

@@ -2,8 +2,10 @@
 
 function isOpenIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
+    let location = handlerInput.requestEnvelope.request.intent.slots.location.value;
 
-    
+    console.log(`What I got from the slot is ${location}`);
+
 
     return handlerInput.responseBuilder
         .speak(speakOutput)
