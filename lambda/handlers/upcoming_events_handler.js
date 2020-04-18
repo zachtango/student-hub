@@ -105,8 +105,4 @@ function format(club, events){
     return speakOutput;
 }
 
-upcomingEventsHandler();
-
-
-
 module.exports = upcomingEventsHandler;
