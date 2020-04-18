@@ -71,7 +71,7 @@ const IntentHandler = {
         else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'IsOpenIntent') {
             return IsOpenIntent(handlerInput);
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'RoomAvailableIntent'){
-          //  return RoomAvailableHandler(handlerInput);
+            return RoomAvailableHandler(handlerInput);
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'DiscoveryIntent') {
             return DiscoveryIntent(handlerInput);
         } else if (Alexa.getIntentName(this.handlerInput.requestEnvelope) === 'UpcomingEventsHandler'){
