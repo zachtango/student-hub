@@ -1,4 +1,4 @@
-const fetch = require('node-fetch');
+//const fetch = require('node-fetch');
 
 const url = 'https://tamsinfo-b33c7.firebaseio.com/roomAvailability.json';
 
@@ -15,7 +15,7 @@ async function roomAvailableHandler(handlerInput){
     
     // get room availability from url
     let rooms;
-    await fetch(url)
+    /*await fetch(url)
         .then(res => res.text())
         .then(body => {
             rooms = JSON.parse(body);
@@ -27,8 +27,8 @@ async function roomAvailableHandler(handlerInput){
         speakOutput = 'The ' + room + ' is available';
     } else{
         speakOutput = 'The ' + room + ' is not available';
-    }
-
+    }*/
+    let speakOutput = 'bruh';
     //console.log(rooms);
     return handlerInput.responseBuilder
         .speak(speakOutput)
