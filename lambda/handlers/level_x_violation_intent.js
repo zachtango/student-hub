@@ -1,5 +1,5 @@
 
-const ACCEPTED_LEVELS = [1,2,3,4,5]
+const ACCEPTED_LEVELS = [1,2,3,4,5, "for", "For"]
 
 const violationStrings = {
     1: `Level one docks include Being up to fifteen minutes late for curfew,
