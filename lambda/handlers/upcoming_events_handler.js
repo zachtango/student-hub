@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const url = 'https://tamsinfo-b33c7.firebaseio.com/clubEvents/';
-
+/*
 class Event{
     constructor(name, date, weekAway){
         this.name = name;
@@ -36,7 +36,7 @@ class Event{
         }
     }
 }
-
+*/
 async function upcomingEventsHandler(handlerInput){
     const club = handlerInput.requestEnvelope.intent.slots.club.value; 
     //const club = 'CSO';
