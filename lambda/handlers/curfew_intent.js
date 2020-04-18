@@ -1,4 +1,4 @@
-const AmazonDateParser = require('../../utils/amazon_date_converter')
+const AmazonDateParser = require('../utils/amazon_date_converter')
 
 function CurfewIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
@@ -19,5 +19,7 @@ function CurfewIntent(handlerInput) {
         //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
         .getResponse();
 }
+
+console.log(AmazonDateParser('PRESENT_REF'))
 
 module.exports = CurfewIntent;
