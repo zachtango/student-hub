@@ -198,18 +198,19 @@ function between(time, timeThing) {
     }
 }
 
-console.log(`Let's see if Kerr is open Saturday at midnight: ${isOpen("kerr", "sa", 24)}`)
+// OLD TESTING STUFF:
+// console.log(`Let's see if Kerr is open Saturday at midnight: ${isOpen("kerr", "sa", 24)}`)
 
-console.log(`Is sycamore open at 7:00: ${between(9, hours.bruce.mo.first)}`)
-// this is how we can access the data
-// console.log(hours.champs.mo.first.open)
-x = Object.values(hours.champs.mo);
-console.log(`After entries is ${x}`)
-for (y of x) {
-    console.log(y)
-    // for (x of y) {
-    //     console.log(x);
-    // }
-}
+// console.log(`Is sycamore open at 7:00: ${between(9, hours.bruce.mo.first)}`)
+// // this is how we can access the data
+// // console.log(hours.champs.mo.first.open)
+// x = Object.values(hours.champs.mo);
+// console.log(`After entries is ${x}`)
+// for (y of x) {
+//     console.log(y)
+//     // for (x of y) {
+//     //     console.log(x);
+//     // }
+// }
 
 module.exports = isOpen;
