@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "change me",
+      "invocationName": "tams hub",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -31,10 +31,27 @@
         {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
+        },
+        {
+          "name": "CurfewIntent",
+          "slots": [
+            {
+              "name": "date",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "What's curfew",
+            "Get Curfew",
+            "Curfew {date}",
+            "Get curfew {date}",
+            "Get curfew at {date}",
+            "What is curfew {date}"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "1"
+  "version": "8"
 }
