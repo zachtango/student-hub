@@ -122,7 +122,8 @@ function format(club, events){
             hours = 12;
             m = 'PM';
         } else{
-            
+            hours = events[i].date.getHours();
+            m = 'AM';
         }
         
         if(events[i].weekAway){
