@@ -3,6 +3,7 @@
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
 const CurfewIntent = require('./handlers/curfew_intent');
+const IsOpenIntent = require('./handlers/is_open_intent');
 const messages = require('./messages');
 
 const LaunchRequestHandler = {
@@ -63,6 +64,9 @@ const IntentHandler = {
         }
         if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'CurfewIntent') {
             return CurfewIntent(handlerInput);
+        }
+        else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'IsOpenIntent') {
+            return IsOpenIntent(handlerInput);
         }
     }
 }
