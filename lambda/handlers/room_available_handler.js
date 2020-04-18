@@ -31,7 +31,7 @@ async function roomAvailableHandler(handlerInput){
 
     //console.log(room[key]);
     return handlerInput.responseBuilder
-        .speak(key)
+        .speak(room)
         .getResponse();
 }
 
