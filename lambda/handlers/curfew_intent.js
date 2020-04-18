@@ -1,13 +1,15 @@
-
+const AmazonDateParser = require('../../utils/amazon_date_converter')
 
 function CurfewIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
 
-    let date = handlerInput.requestEnvelope.request.intent.slots.date;
+    let date = handlerInput.requestEnvelope.request.intent.slots.date.value;
     if (date == null) {
         console.log("\nDate is undefined or not specified.");
     } else {
         console.log(`Date retrieved as AMAZON.DATE: ${date}`);
+        let x = AmazonDateParser(date);
+        console.log(`Date: ${x}`);
     }
 
     // var pasedDate = new AmazonDateParser(date);
