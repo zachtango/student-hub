@@ -6,6 +6,8 @@ function isOpenIntent(handlerInput) {
     location = location.toLowerCase() // Make sure location is lowercase to ensure function works correctly
 
     console.log(`What I got from the slot is ${location}`);
+    console.log(`Here is the json for slots: ${Object.keys(handlerInput.requestEnvelope.request.intent.slots.location)}`);
+    
 
     let date = Date();
     date = date.split(" ");
