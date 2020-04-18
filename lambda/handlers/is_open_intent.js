@@ -6,9 +6,11 @@ function isOpenIntent(handlerInput) {
     location = location.toLowerCase() // Make sure location is lowercase to ensure function works correctly
 
     console.log(`What I got from the slot is ${location}`);
-    console.log(`Here is the json for slots: ${Object.keys(handlerInput.requestEnvelope.request.intent.slots.location)}`);
-    console.log(`Could this be it: ${handlerInput.requestEnvelope.request.intent.slots.location.resolutions.resolutionsPerAuthority[0].values[0].value.id}`);
+    // console.log(`Here is the json for slots: ${Object.keys(handlerInput.requestEnvelope.request.intent.slots.location)}`);
+    console.log(`Value got from ID: ${handlerInput.requestEnvelope.request.intent.slots.location.resolutions.resolutionsPerAuthority[0].values[0].value.id}`);
 
+    location = String(handlerInput.requestEnvelope.request.intent.slots.location.resolutions.resolutionsPerAuthority[0].values[0].value.id);
+    location = location.toLowerCase();
 
     let date = Date();
     date = date.split(" ");
