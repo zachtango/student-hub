@@ -38,7 +38,7 @@ class Event{
 }
 */
 async function upcomingEventsHandler(handlerInput){
-    const club = handlerInput.requestEnvelope.intent.slots.club.value; 
+    const club = handlerInput.requestEnvelope.request.intent.slots.club.value; 
     //const club = 'CSO';
     /*
     let events = null;
