@@ -78,6 +78,32 @@
           "samples": [
             "is the {room} available"
           ]
+        },
+        {
+          "name": "DiscoveryIntent",
+          "slots": [
+            {
+              "name": "time",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "bus_location",
+              "type": "bus_location"
+            }
+          ],
+          "samples": [
+            "When's the next bus going back to {bus_location} at {time}",
+            "When's the next bus going back to {bus_location}",
+            "When does the next bus come back to {bus_location}",
+            "When does the next discovery park bus come to {bus_location}",
+            "When does the next discovery park bus come from {bus_location}",
+            "When does the next discovery park bus come",
+            "Get discovery park bus time",
+            "Get next discovery park bus",
+            "Get discovery park bus time from {bus_location} at {time}",
+            "Get discovery park bus time from {bus_location} ",
+            "Get discovery park bus at {time}"
+          ]
         }
       ],
       "types": [
@@ -154,6 +180,8 @@
               "name": {
                 "value": "bruce",
                 "synonyms": [
+                  "bruceateria",
+                  "brucateria",
                   "bruce cafeteria",
                   "bruceteria"
                 ]
@@ -189,6 +217,34 @@
             }
           ],
           "name": "tams_room"
+        },
+        {
+          "values": [
+            {
+              "id": "d_park",
+              "name": {
+                "value": "D Park",
+                "synonyms": [
+                  "Discovery",
+                  "D Park",
+                  "Discovery Park"
+                ]
+              }
+            },
+            {
+              "id": "main",
+              "name": {
+                "value": "main",
+                "synonyms": [
+                  "McConnell Hall",
+                  "McConnell",
+                  "UNT",
+                  "Main Campus"
+                ]
+              }
+            }
+          ],
+          "name": "bus_location"
         }
       ]
     },
@@ -213,6 +269,27 @@
                   "prompt": "Slot.Validation.461074647231.950367269801.1409568674263"
                 }
               ]
+            }
+          ]
+        },
+        {
+          "name": "DiscoveryIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "time",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
+            },
+            {
+              "name": "bus_location",
+              "type": "bus_location",
+              "elicitationRequired": false,
+              "confirmationRequired": false,
+              "prompts": {}
             }
           ]
         }
@@ -240,5 +317,5 @@
       }
     ]
   },
-  "version": "30"
+  "version": "33"
 }
