@@ -45,8 +45,10 @@ async function upcomingEventsHandler(handlerInput){
         club = 'CSO';   
     } else if(input === 'JETS' || input === 'jets'){
         club = 'JETS';
-    } else if(input === 'RO' || input === 'research organization'){
-        
+    } else if(input === 'RO' || input === 'research organization' || input === 'research club'){
+        club = 'RO';
+    } else if(input === 'sports' || input === 'sports club'){
+        club = 'sports';
     }
     
     
