@@ -16,13 +16,13 @@ function DiscoveryIntent(handlerInput) {
     }
     let time = handlerInput.requestEnvelope.request.intent.slots.time.value;
     if (time == null) {
-        console.log(`Time was ${time}, setting it to PRESENT_REF`);
-        time = 'PRESENT_REF'; // set time to the current time, according to the Amazon time format
+        console.log(`Time was ${time}, setting it to now`);
+        time = Date().split(" ")[4];
     } else {
         console.log(`\nGot time from slots: ${time}`);
     }
     time = String(time);
-    let convertedTime = Number(time.substring(0,2)) + Number(time.substring(3,5)) / 100.0;
+    let convertedTime = Number(time.substring(0,2)) + (Number(time.substring(3,5)) * 100/60) / 100.0;
     console.log(`Got converted time as ${convertedTime}`);
 
     return handlerInput.responseBuilder
