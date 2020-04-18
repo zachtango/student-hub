@@ -113,10 +113,22 @@ function format(club, events){
     
     let speakOutput = `Okay, here are some upcoming events for the ${club} club. `;
     for(let i = 0; i < events.length; ++i){
+        let hours = null;
+        let m = null;
+        if(events[i].date.getHours() > 12){
+            hours = 23 - events[i].date.getHours();
+            m = 'PM';
+        } else if(events[i].date.getHours() === 12){
+            hours = 12;
+            m = 'PM';
+        } else{
+            
+        }
+        
         if(events[i].weekAway){
             word = 'next';
         }
-        speakOutput += `There is the ${events[i].name} event ${word} ${events[i].day}. `
+        speakOutput += `There is the ${events[i].name} event ${word} ${events[i].day} at ${hours}:${events[i].date.getMinutes()} ${m}. `
     }
 
     return speakOutput;
