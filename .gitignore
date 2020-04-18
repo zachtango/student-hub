@@ -2,3 +2,4 @@ lambda/node_modules
 .ask/
 hooks/
 run.sh
+testing.js

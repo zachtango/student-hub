@@ -2,6 +2,7 @@
 // Please visit https://alexa.design/cookbook for additional examples on implementing slots, dialog management,
 // session persistence, api calls, and more.
 const Alexa = require('ask-sdk-core');
+const CurfewIntent = require('./handlers/curfew_intent');
 
 const LaunchRequestHandler = {
     canHandle(handlerInput) {
@@ -58,6 +59,9 @@ const IntentHandler = {
             .speak(speakOutput)
             //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
             .getResponse();
+        }
+        if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'CurfewIntent') {
+            return CurfewIntent(handlerInput);
         }
     }
 }
