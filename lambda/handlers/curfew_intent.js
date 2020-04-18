@@ -1,4 +1,4 @@
-const AmazonDateParser = require('amazon-date-parser');
+const AmazonDateParser = require("../../node_modules/amazon-date-parser");
 
 function CurfewIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
