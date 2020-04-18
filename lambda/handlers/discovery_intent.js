@@ -1,4 +1,5 @@
 const AmazonDateParser = require('../utils/amazon_date_converter');
+const UTCtoCST = require('../utils/UTCtoCST');
 
 function DiscoveryIntent(handlerInput) {
     let speakOutput = "Speak output is not modified in Discovery Intent. ";
@@ -22,7 +23,7 @@ function DiscoveryIntent(handlerInput) {
         console.log(`\nGot time from slots: ${time}`);
     }
     time = String(time);
-    let convertedTime = Number(time.substring(0,2)) + (Number(time.substring(3,5)) * 100/60) / 100.0;
+    let convertedTime = UTCtoCST(Number(time.substring(0,2))) + (Number(time.substring(3,5)) * 100/60) / 100.0;
     console.log(`Got converted time as ${convertedTime}`);
 
     return handlerInput.responseBuilder
