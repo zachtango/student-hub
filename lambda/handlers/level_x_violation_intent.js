@@ -45,9 +45,8 @@ function LevelXViolationIntent(handlerInput) {
     let speakOutput = "Speak output has not been modified.";
 
     let level = handlerInput.requestEnvelope.request.intent.slots.level.value;
-    level = Number(level);
     console.log(`The level we got was: ${level}`);
-    if (!ACCEPTED_LEVELS.includes(level)) {
+    if (!ACCEPTED_LEVELS.includes(Number(level)) && !ACCEPTED_LEVELS.includes(level)) {
         return handlerInput.responseBuilder
         .speak("Please specify a value between 1 and 5.")
         .getResponse();
