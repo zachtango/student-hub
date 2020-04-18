@@ -5,7 +5,7 @@ const url = 'https://tamsinfo-b33c7.firebaseio.com/roomAvailability.json';
 
 async function roomAvailableHandler(handlerInput){
     const room = handlerInput.requestEnvelope.request.intent.slots.room.value;
-    
+
     let key = null;
     if(room === 'kitchenette'){
         key = 'kitchenette';
@@ -29,11 +29,11 @@ async function roomAvailableHandler(handlerInput){
         speakOutput = 'The ' + room + ' is not available';
     }
 
-    //console.log(room[key]);
+    //console.log(rooms);
     return handlerInput.responseBuilder
         .speak(speakOutput)
         .getResponse();
 }
-
+roomAvailableHandler();
 
 module.exports = roomAvailableHandler;
