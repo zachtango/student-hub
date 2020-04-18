@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "tams hub",
+      "invocationName": "student hub",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -129,6 +129,7 @@
             }
           ],
           "samples": [
+            "How many points would I get if I {infraction}",
             "Get number of points for {infraction}",
             "How much points for {infraction}",
             "Disciplinary points for {infraction}",
@@ -290,10 +291,7 @@
             },
             {
               "name": {
-                "value": "JETS",
-                "synonyms": [
-                  "jets"
-                ]
+                "value": "JETS"
               }
             },
             {
@@ -320,8 +318,358 @@
         {
           "values": [
             {
+              "id": "general_curfew_violation",
               "name": {
-                "value": "Being fifteen minutes late for curfew"
+                "value": "being late to curfew"
+              }
+            },
+            {
+              "id": "off_limits_areas",
+              "name": {
+                "value": "Exploring or crawling in off-limits areas",
+                "synonyms": [
+                  "going in the basement",
+                  "going in the attic",
+                  "going on the roof"
+                ]
+              }
+            },
+            {
+              "id": "law_violation",
+              "name": {
+                "value": "Violating the law",
+                "synonyms": [
+                  "breaking the law"
+                ]
+              }
+            },
+            {
+              "id": "alcohol_or_drugs",
+              "name": {
+                "value": "Possessing and/or using alcohol or illegal drugs or drug paraphernalia",
+                "synonyms": [
+                  "doing dope",
+                  "smoking dope",
+                  "smoking weed",
+                  "alcohol",
+                  "drugs",
+                  "using drugs",
+                  "doing drugs",
+                  "drinking",
+                  "using alcohol"
+                ]
+              }
+            },
+            {
+              "id": "overnight_absence",
+              "name": {
+                "value": "Being absent from the hall overnight without permission",
+                "synonyms": [
+                  "overnight absence",
+                  "an unpermitted overnight absence"
+                ]
+              }
+            },
+            {
+              "id": "overnight_guest",
+              "name": {
+                "value": "Hosting or hiding an unregistered overnight guest ",
+                "synonyms": [
+                  "having an overnight guest"
+                ]
+              }
+            },
+            {
+              "id": "safety_and_security_violation",
+              "name": {
+                "value": "Violating safety and security policies"
+              }
+            },
+            {
+              "id": "violating_computer_policy",
+              "name": {
+                "value": "Violating computer policy"
+              }
+            },
+            {
+              "id": "fighting",
+              "name": {
+                "value": "fighting",
+                "synonyms": [
+                  "having a fight"
+                ]
+              }
+            },
+            {
+              "id": "verbal_abuse",
+              "name": {
+                "value": "Verbally abusing staff",
+                "synonyms": [
+                  "verbally abusing staff members"
+                ]
+              }
+            },
+            {
+              "id": "vandalism",
+              "name": {
+                "value": "Participating in vandalism",
+                "synonyms": [
+                  "vandalism"
+                ]
+              }
+            },
+            {
+              "id": "smoking",
+              "name": {
+                "value": "Smoking or possession of any tobacco products",
+                "synonyms": [
+                  "using tobacco",
+                  "smoking",
+                  "vaping"
+                ]
+              }
+            },
+            {
+              "id": "sexual_intercourse",
+              "name": {
+                "value": "sexual intercourse",
+                "synonyms": [
+                  "having sex"
+                ]
+              }
+            },
+            {
+              "id": "late_45_or_more_minutes",
+              "name": {
+                "value": "Being late to curfew by 45 or more minutes",
+                "synonyms": [
+                  "being very late to curfew",
+                  "being super late to curfew",
+                  "being late to curfew more than 45 minutes"
+                ]
+              }
+            },
+            {
+              "id": "harassment",
+              "name": {
+                "value": "Harassing someone",
+                "synonyms": [
+                  "harassment"
+                ]
+              }
+            },
+            {
+              "id": "open_flame",
+              "name": {
+                "value": "Having a candle or an open flame",
+                "synonyms": [
+                  "having a lighter",
+                  "using a lighter",
+                  "using a candle",
+                  "a candle",
+                  "having a fire",
+                  "having an open flame",
+                  "having a candle"
+                ]
+              }
+            },
+            {
+              "id": "window_tab_tampering",
+              "name": {
+                "value": "Tampering with window tabs",
+                "synonyms": [
+                  "Messing with window tabs"
+                ]
+              }
+            },
+            {
+              "id": "emergency_exit",
+              "name": {
+                "value": "Using an emergency exit during a non-emergency",
+                "synonyms": [
+                  "emergency exits",
+                  "using the emergency exit"
+                ]
+              }
+            },
+            {
+              "id": "different_stairwell",
+              "name": {
+                "value": "Using a stairwell other than the central stairwell during a non-emergency ",
+                "synonyms": [
+                  "using another stairwell",
+                  "using the wrong stairwell"
+                ]
+              }
+            },
+            {
+              "id": "cafeteria_misbehaving",
+              "name": {
+                "value": "Misbehaving in the cafeteria"
+              }
+            },
+            {
+              "id": "unauthorized_card_use",
+              "name": {
+                "value": "Using a meal card or ID card in an unauthorized manner",
+                "synonyms": [
+                  "unauthorized use of an I D card"
+                ]
+              }
+            },
+            {
+              "id": "non_compliance",
+              "name": {
+                "value": "Being non-compliant",
+                "synonyms": [
+                  "non compliance",
+                  "non-compliance",
+                  "not doing what an R A says",
+                  "not listening to an R A",
+                  "refusing to listen to an R A"
+                ]
+              }
+            },
+            {
+              "id": "off_limits",
+              "name": {
+                "value": "Being off-limits",
+                "synonyms": [
+                  "being in restricted areas",
+                  "Being off limits"
+                ]
+              }
+            },
+            {
+              "id": "late_45_minutes",
+              "name": {
+                "value": "Being late for curfew by 30-44 minutes",
+                "synonyms": [
+                  "being late to curfew 45 minutes",
+                  "being late to curfew from 30 to 45 minutes",
+                  "late to curfew by 30 to 45 minutes"
+                ]
+              }
+            },
+            {
+              "id": "visitation",
+              "name": {
+                "value": "Violating visitation policy",
+                "synonyms": [
+                  "visitation",
+                  "violating visitation"
+                ]
+              }
+            },
+            {
+              "id": "having_pet",
+              "name": {
+                "value": "Having a pet in the hall"
+              }
+            },
+            {
+              "id": "privilege_violation",
+              "name": {
+                "value": "Violating the privilege system",
+                "synonyms": [
+                  "violating privileges"
+                ]
+              }
+            },
+            {
+              "id": "pda",
+              "name": {
+                "value": "Violating PDA policy",
+                "synonyms": [
+                  "full body hug",
+                  "full body press",
+                  "full-body press",
+                  "full-body hug",
+                  "kissing someone",
+                  "touching someone",
+                  "touching",
+                  "hugging",
+                  "kissing",
+                  "sharing a blanket",
+                  "sharing a blanket with someone",
+                  "lying on top of someone",
+                  "Public Displays of Affection"
+                ]
+              }
+            },
+            {
+              "id": "late_30_minutes",
+              "name": {
+                "value": "Being late for curfew by 15-29 minutes",
+                "synonyms": [
+                  "being late to curfew by 15 to 29 minutes",
+                  "being late to curfew by up to 30 minutes",
+                  "being late to curfew by 30 minutes"
+                ]
+              }
+            },
+            {
+              "id": "room_inspection_ignoring",
+              "name": {
+                "value": "Failing to meet room inspection standards within 24 hours of warning",
+                "synonyms": [
+                  "not doing what I was told to after room inspections",
+                  "ignoring room inspections",
+                  "Ignoring room inspection results"
+                ]
+              }
+            },
+            {
+              "id": "roughhousing",
+              "name": {
+                "value": "Roughhousing",
+                "synonyms": [
+                  "messing around",
+                  "playing rough"
+                ]
+              }
+            },
+            {
+              "id": "missing_mandatory_functions",
+              "name": {
+                "value": "Missing mandatory academy functions",
+                "synonyms": [
+                  "if I miss seminar",
+                  "missing seminar",
+                  "Missing mandatory meetings"
+                ]
+              }
+            },
+            {
+              "id": "loitering",
+              "name": {
+                "value": "Loitering or lingering in center stairwell",
+                "synonyms": [
+                  "hanging out in the central stairwell",
+                  "lingering",
+                  "loitering"
+                ]
+              }
+            },
+            {
+              "id": "loaner_key",
+              "name": {
+                "value": "Checking out loaner key more than three times in a semester ",
+                "synonyms": [
+                  "more than 3 loan keys",
+                  "checking out key more than 3 times"
+                ]
+              }
+            },
+            {
+              "id": "late_15_minutes",
+              "name": {
+                "value": "Being up to fifteen minutes late for curfew",
+                "synonyms": [
+                  "being a little late to curfew",
+                  "being slightly late to curfew",
+                  "Being 15 minutes late to curfew"
+                ]
               }
             }
           ],
@@ -423,5 +771,5 @@
       }
     ]
   },
-  "version": "47"
+  "version": "49"
 }
