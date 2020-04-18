@@ -137,6 +137,22 @@
             "How many points for {infraction}",
             "How many points would I get docked for {infraction}"
           ]
+        },
+        {
+          "name": "LevelXViolationIntent",
+          "slots": [
+            {
+              "name": "level",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "What are level {level} violations",
+            "level {level} disciplinary violations",
+            "Level {level} violations",
+            "Get level {level} disciplinary violations",
+            "Get level {level} violations"
+          ]
         }
       ],
       "types": [
@@ -320,7 +336,10 @@
             {
               "id": "general_curfew_violation",
               "name": {
-                "value": "being late to curfew"
+                "value": "being late to curfew",
+                "synonyms": [
+                  "missing curfew"
+                ]
               }
             },
             {
@@ -365,6 +384,7 @@
               "name": {
                 "value": "Being absent from the hall overnight without permission",
                 "synonyms": [
+                  "overnight absence ",
                   "overnight absence",
                   "an unpermitted overnight absence"
                 ]
@@ -375,6 +395,7 @@
               "name": {
                 "value": "Hosting or hiding an unregistered overnight guest ",
                 "synonyms": [
+                  "housing an overnight guest",
                   "having an overnight guest"
                 ]
               }
@@ -522,6 +543,7 @@
               "name": {
                 "value": "Being non-compliant",
                 "synonyms": [
+                  "talking back to an R A",
                   "non compliance",
                   "non-compliance",
                   "not doing what an R A says",
@@ -634,6 +656,9 @@
               "name": {
                 "value": "Missing mandatory academy functions",
                 "synonyms": [
+                  "showing up late to seminar",
+                  "being late to seminar",
+                  "skipping seminar",
                   "if I miss seminar",
                   "missing seminar",
                   "Missing mandatory meetings"
@@ -771,5 +796,5 @@
       }
     ]
   },
-  "version": "49"
+  "version": "58"
 }
