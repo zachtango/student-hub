@@ -29,9 +29,9 @@ async function roomAvailableHandler(handlerInput){
         speakOutput = 'The ' + room + ' is not available';
     }
 
-    console.log(speakOutput);
+    //console.log(room[key]);
     return handlerInput.responseBuilder
-        .speak(speakOutput)
+        .speak(key)
         .getResponse();
 }
 
