@@ -84,7 +84,7 @@
           "slots": [
             {
               "name": "time",
-              "type": "AMAZON.DATE"
+              "type": "AMAZON.TIME"
             },
             {
               "name": "bus_location",
@@ -279,7 +279,7 @@
           "slots": [
             {
               "name": "time",
-              "type": "AMAZON.DATE",
+              "type": "AMAZON.TIME",
               "elicitationRequired": false,
               "confirmationRequired": false,
               "prompts": {}
@@ -317,5 +317,5 @@
       }
     ]
   },
-  "version": "33"
+  "version": "37"
 }

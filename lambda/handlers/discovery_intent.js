@@ -21,13 +21,9 @@ function DiscoveryIntent(handlerInput) {
     } else {
         console.log(`\nGot time from slots: ${time}`);
     }
-
-    let parsedTime = new AmazonDateParser(time);
-    console.log(`Parsed time: ${parsedTime}`);
-
-
-
-
+    time = String(time);
+    let convertedTime = Number(time.substring(0,2)) + Number(time.substring(3,5)) / 100.0;
+    console.log(`Got converted time as ${convertedTime}`);
 
     return handlerInput.responseBuilder
         .speak(speakOutput + speakAddition)
