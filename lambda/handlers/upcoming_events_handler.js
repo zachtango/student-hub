@@ -38,9 +38,16 @@ class Event{
 }
 
 async function upcomingEventsHandler(handlerInput){
-    const club = handlerInput.requestEnvelope.request.intent.slots.club.value;
-    //const club = 'CSO';
-    
+    const input = handlerInput.requestEnvelope.request.intent.slots.club.value;
+   
+    let club = null;
+    if(input === 'CSO' || input === 'computer club' || input === 'computer science organization'){
+        club = 'CSO';   
+    } else if(input === 'JETS' || input === 'jets'){
+        club = 'JETS';
+    } else if(input === 'RO' || input === 'research organization'){
+        
+    }
     
     
     let events = null;
