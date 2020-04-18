@@ -41,6 +41,8 @@ function PointsGetter(infraction) {
         case 'law_violation':
         case 'off_limits_areas':
             return '100';
+        case 'general_curfew_violation':
+            return 'anywhere from 10 to 90 points, depending on how late you are.';
     }
 }
 
