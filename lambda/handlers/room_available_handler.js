@@ -34,6 +34,5 @@ async function roomAvailableHandler(handlerInput){
         .speak(speakOutput)
         .getResponse();
 }
-roomAvailableHandler();
 
 module.exports = roomAvailableHandler;
