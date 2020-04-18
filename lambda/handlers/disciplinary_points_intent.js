@@ -4,6 +4,7 @@ function DisciplinaryPointsIntent(handlerInput) {
     let speakOutput = "The speak output has not been modified."; 
     
     let infractionSpecified = handlerInput.requestEnvelope.request.intent.slots.infraction.resolutions.resolutionsPerAuthority;
+    console.log(`Empty resolutions looks like this: ${infractionSpecified} and has these keys: ${Object.keys(infractionSpecified)}`);
     if (infractionSpecified == null) {
         return handlerInput.responseBuilder
         .speak("A violation was not specified. Please repeat the message specifying a violation.")
