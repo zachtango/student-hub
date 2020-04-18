@@ -17,6 +17,12 @@ function convertTime(time) {
 
 function timePrettifier(time) {
     time = time.split(":");
+    if (time[1] == '00') {
+        time[1] = "o'clock";
+    }
+    if (Number(time[0]) > 12) {
+        time[0] -= 12;
+    }
     return `${time[0]} ${time[1]}`;
 }
 
