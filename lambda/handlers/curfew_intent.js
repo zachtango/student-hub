@@ -9,7 +9,7 @@ function CurfewIntent(handlerInput) {
     } else {
         console.log(`Date retrieved as AMAZON.DATE: ${date}`);
         let x = AmazonDateParser(date);
-        console.log(`Date: ${x}`);
+        console.log(`Date: ${x.startDate}`);
     }
 
     // var pasedDate = new AmazonDateParser(date);
@@ -19,7 +19,5 @@ function CurfewIntent(handlerInput) {
         //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
         .getResponse();
 }
-
-console.log(AmazonDateParser('PRESENT_REF'))
 
 module.exports = CurfewIntent;
