@@ -9,7 +9,7 @@ async function roomAvailableHandler(handlerInput){
     let key = null;
     if(room === 'kitchenette'){
         key = 'kitchenette';
-    } else if(room === 'tv room'){
+    } else if(room === 'TV room'){
         key = 'tvRoom';
     }
     
@@ -31,7 +31,7 @@ async function roomAvailableHandler(handlerInput){
 
     //console.log(room[key]);
     return handlerInput.responseBuilder
-        .speak(room)
+        .speak(speakOutput)
         .getResponse();
 }
 
