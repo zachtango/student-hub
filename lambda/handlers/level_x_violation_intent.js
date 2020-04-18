@@ -1,14 +1,11 @@
 
 const ACCEPTED_LEVELS = [1,2,3,4,5]
 
-
-
 function LevelXViolationIntent(handlerInput) {
     let speakOutput = "Speak output has not been modified.";
 
     let level = handlerInput.requestEnvelope.request.intent.slots.level.value;
-    console.log(`${Object.keys(handlerInput.requestEnvelope.request.intent.slots.level)},
-    ${Object.values(handlerInput.requestEnvelope.request.intent.slots.level)} `)
+    level = Number(level);
     console.log(`The level we got was: ${level}`);
     if (!ACCEPTED_LEVELS.includes(level)) {
         return handlerInput.responseBuilder
