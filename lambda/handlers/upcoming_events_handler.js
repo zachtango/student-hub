@@ -127,7 +127,7 @@ function format(club, events){
         }
         
         let minutes = null;
-        if(events[i].date.getMinutes < 10){
+        if(events[i].date.getMinutes() < 10){
             minutes = '0' + events[i].date.getMinutes();
         } else{
             minutes = events[i].date.getMinutes();
