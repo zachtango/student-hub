@@ -1,4 +1,4 @@
-const AmazonDateParser = require("../../node_modules/amazon-date-parser/index");
+
 
 function CurfewIntent(handlerInput) {
     let speakOutput = "Speak output not modified.";
@@ -10,7 +10,7 @@ function CurfewIntent(handlerInput) {
         console.log(`Date retrieved as AMAZON.DATE: ${date}`);
     }
 
-    var date = new AmazonDateParser(date);
+    // var pasedDate = new AmazonDateParser(date);
 
     return handlerInput.responseBuilder
         .speak(speakOutput)
