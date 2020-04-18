@@ -92,7 +92,7 @@ async function upcomingEventsHandler(handlerInput){
         .speakOutput(speakOutput)
         .getResponse();
 }
-
+/*
 function format(club, events){
     let word = 'next next';
     
@@ -105,6 +105,6 @@ function format(club, events){
     }
 
     return speakOutput;
-}
+}*/
 
 module.exports = upcomingEventsHandler;
