@@ -59,7 +59,9 @@ async function upcomingEventsHandler(handlerInput){
     });
 
     if(events === null){
-        
+        return handlerInput.responseBuilder
+        .speak('There are no upcoming events currently.')
+        .getResponse();
     }
     
     //console.log(Object.keys(events));
