@@ -16,7 +16,7 @@ async function roomAvailableHandler(handlerInput){
     }
     
     // get room availability from url
-    let rooms = null;
+    let rooms;
     await fetch(url)
         .then(res => res.text())
         .then(body => {
