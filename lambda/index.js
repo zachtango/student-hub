@@ -4,6 +4,7 @@
 const Alexa = require('ask-sdk-core');
 const CurfewIntent = require('./handlers/curfew_intent');
 const IsOpenIntent = require('./handlers/is_open_intent');
+const 
 const messages = require('./messages');
 
 const LaunchRequestHandler = {
