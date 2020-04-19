@@ -23,13 +23,8 @@ async function WasherIntent(handlerInput) {
         .getResponse();
     }
 
-    let statuses;
-    await fetch(url)
-    .then(response => response.json())
-    .then(body => {
-        statuses = body.json()
-    });
-
+    let statuses = await fetch(url);
+    
     statuses = statuses.json();
     console.log(`Got statuses as ${statuses}`);
     let washerString = `washer${washerNum}`;
@@ -64,9 +59,9 @@ async function DryerIntent(handlerInput) {
 }
 
 
-fetch(url)
-    .then(response => response.json())
-    .then(json => console.log(json.fields.dryer1.stringValue));
+// fetch(url)
+//     .then(response => response.json())
+//     .then(json => console.log(json.fields.dryer1.stringValue));
 
 module.exports = {
     WasherIntent,
