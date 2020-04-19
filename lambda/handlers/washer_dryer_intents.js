@@ -24,11 +24,7 @@ async function WasherIntent(handlerInput) {
     }
 
     let statuses;
-    await fetch(url)
-        .then(res => res.json())
-        .then(body => {
-            statuses = body;
-        });
+    statuses = await fetch(url);
     
     statuses = statuses.json();
     console.log(`Got statuses as ${statuses}`);
