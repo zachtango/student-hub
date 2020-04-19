@@ -25,6 +25,7 @@ async function WasherIntent(handlerInput) {
 
     let statuses = await fetch(url);
     statuses = statuses.json();
+    console.log(`Got statuses as ${statuses}`);
     let washerString = `washer${washerNum}`;
     console.log(`washerString looks like this: ${washerString}`);
     let status = statuses.fields[washerString].stringValue;
