@@ -115,13 +115,14 @@ function format(club, events){
     for(let i = 0; i < events.length; ++i){
         let hours = null;
         let m = null;
-        if(events[i].date.getHours() > 12){
-            hours = events[i].getHours() - 12;
-            m = 'PM';
-        } else if(events[i].getHours() === 24){
+        
+        if(events[i].getHours() === 24){
             hours = 12;
             m = 'AM';
-        }else if(events[i].date.getHours() === 12){
+        } else if(events[i].date.getHours() > 12){
+            hours = events[i].getHours() - 12;
+            m = 'PM';
+        } else if(events[i].date.getHours() === 12){
             hours = 12;
             m = 'PM';
         } else{
