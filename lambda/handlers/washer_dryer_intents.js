@@ -23,32 +23,9 @@ async function WasherIntent(handlerInput) {
         .getResponse();
     }
 
-    // let statuses;
-    // statuses = await fetch(url);
-    // statuses = statuses.json();
-
-
     return fetch(url)
     .then(response => response.json())
     .then(statuses => myFunc(statuses, washerNum, handlerInput));
-
-    // console.log(`Got statuses as ${statuses}`);
-    // let washerString = `washer${washerNum}`;
-    // console.log(`washerString looks like this: ${washerString}`);
-    // let status = statuses.fields[washerString].stringValue;
-    // console.log(`Got status: ${status}`);
-    // status = status.toLowerCase();
-
-    // if (status == 'true') {
-    //     speakOutput = `Washer ${washerNum} is open.`;
-    // } else {
-    //     speakOutput = `Washer ${washerNum} is currently occupied.`;
-    // }
-
-    // return handlerInput.responseBuilder
-    //     .speak(speakOutput)
-    //     //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-    //     .getResponse();
 }
 
 function myFunc(statuses, washerNum, handlerInput){
@@ -76,8 +53,34 @@ async function DryerIntent(handlerInput) {
 
     let dryerNum = handlerInput.requestEnvelope.request.intent.slots.dryer_num.value;
     console.log(`Got dryer num as ${dryerNum}`);
+    dryerNum = Number(dryerNum);
+    console.log(`Casted dryerNum as ${dryerNum}`);
 
+    if (!dryers.includes(dryerNum)) {
+        return handlerInput.responseBuilder
+        .speak("Sorry, I didn't recognize this as a valid dryer number.")
+        //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        .getResponse();
+    }
 
+    return fetch(url)
+    .then(response => response.json())
+    .then(statuses => myFunc2(statuses, dryerNum, handlerInput));
+}
+
+function myFunc2(statuses, dryerNum, handlerInput){
+    console.log(`Got statuses as ${statuses}`);
+    let dryerString = `dryer${dryerNum}`;
+    console.log(`dryerString looks like this: ${dryerString}`);
+    let status = statuses.fields[dryerString].stringValue;
+    console.log(`Got status: ${status}`);
+    status = status.toLowerCase();
+
+    if (status == 'true') {
+        speakOutput = `Dryer ${dryerNum} is open.`;
+    } else {
+        speakOutput = `Dryer ${dryerNum} is currently occupied.`;
+    }
 
     return handlerInput.responseBuilder
         .speak(speakOutput)
