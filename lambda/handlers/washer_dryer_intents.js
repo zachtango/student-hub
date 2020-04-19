@@ -23,7 +23,13 @@ async function WasherIntent(handlerInput) {
         .getResponse();
     }
 
-    let statuses = await fetch(url);
+    let statuses;
+    await fetch(url)
+        .then(res => res.text())
+        .then(body => {
+            statuses = JSON.parse(body);
+        });
+
     statuses = statuses.json();
     console.log(`Got statuses as ${statuses}`);
     let washerString = `washer${washerNum}`;
