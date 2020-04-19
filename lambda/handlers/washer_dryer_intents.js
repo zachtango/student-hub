@@ -23,10 +23,35 @@ async function WasherIntent(handlerInput) {
         .getResponse();
     }
 
-    let statuses;
-    statuses = await fetch(url);
-    
-    statuses = statuses.json();
+    // let statuses;
+    // statuses = await fetch(url);
+    // statuses = statuses.json();
+
+
+    fetch(url)
+    .then(response => response.json())
+    .then(statuses => myFunc(statuses, washerNum, handlerInput));
+
+    // console.log(`Got statuses as ${statuses}`);
+    // let washerString = `washer${washerNum}`;
+    // console.log(`washerString looks like this: ${washerString}`);
+    // let status = statuses.fields[washerString].stringValue;
+    // console.log(`Got status: ${status}`);
+    // status = status.toLowerCase();
+
+    // if (status == 'true') {
+    //     speakOutput = `Washer ${washerNum} is open.`;
+    // } else {
+    //     speakOutput = `Washer ${washerNum} is currently occupied.`;
+    // }
+
+    // return handlerInput.responseBuilder
+    //     .speak(speakOutput)
+    //     //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+    //     .getResponse();
+}
+
+function myFunc(statuses, washerNum, handlerInput){
     console.log(`Got statuses as ${statuses}`);
     let washerString = `washer${washerNum}`;
     console.log(`washerString looks like this: ${washerString}`);
@@ -45,6 +70,7 @@ async function WasherIntent(handlerInput) {
         //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
         .getResponse();
 }
+
 async function DryerIntent(handlerInput) {
     let speakOutput = "Speak output not modified."; 
 
@@ -62,7 +88,8 @@ async function DryerIntent(handlerInput) {
 
 // fetch(url)
 //     .then(response => response.json())
-//     .then(json => console.log(json.fields.dryer1.stringValue));
+//     .then(json => {console.log(json.fields.dryer1.stringValue)}
+//     );
 
 module.exports = {
     WasherIntent,
