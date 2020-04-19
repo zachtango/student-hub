@@ -28,7 +28,7 @@ async function WasherIntent(handlerInput) {
     // statuses = statuses.json();
 
 
-    fetch(url)
+    return fetch(url)
     .then(response => response.json())
     .then(statuses => myFunc(statuses, washerNum, handlerInput));
 
