@@ -119,7 +119,7 @@ function format(club, events){
             hours = events[i].getHours() - 12;
             m = 'PM';
         } else if(events[i].getHours() === 24){
-            horus = 12;
+            hours = 12;
             m = 'AM';
         }else if(events[i].date.getHours() === 12){
             hours = 12;
