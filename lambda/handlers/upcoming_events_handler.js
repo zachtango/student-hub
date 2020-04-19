@@ -116,7 +116,7 @@ function format(club, events){
         let hours = null;
         let m = null;
         
-        if(events[i].getHours() === 24){
+        if(events[i].date.getHours() === 24){
             hours = 12;
             m = 'AM';
         } else if(events[i].date.getHours() > 12){
