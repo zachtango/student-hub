@@ -11,6 +11,8 @@ async function roomAvailableHandler(handlerInput){
         key = 'kitchenette';
     } else if(room === 'TV room'){
         key = 'tvRoom';
+    } else if(room === 'buley'){
+        key = 'buley';
     }
     
     // get room availability from url
