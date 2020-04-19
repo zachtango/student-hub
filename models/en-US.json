@@ -153,6 +153,32 @@
             "Get level {level} disciplinary violations",
             "Get level {level} violations"
           ]
+        },
+        {
+          "name": "WasherIntent",
+          "slots": [
+            {
+              "name": "washer_num",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "is washer {washer_num} available",
+            "is washer {washer_num} open"
+          ]
+        },
+        {
+          "name": "DryerIntent",
+          "slots": [
+            {
+              "name": "dryer_num",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": [
+            "is dryer {dryer_num} open",
+            "Is dryer {dryer_num} available"
+          ]
         }
       ],
       "types": [
@@ -796,5 +822,5 @@
       }
     ]
   },
-  "version": "58"
+  "version": "68"
 }

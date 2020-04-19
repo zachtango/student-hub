@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "amazon-date-parser": "^0.3.0",
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.18.0",
     "aws-sdk": "^2.326.0",
-    "amazon-date-parser": "^0.3.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {},

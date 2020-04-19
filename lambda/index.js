@@ -9,6 +9,7 @@ const DisciplinaryPointsIntent = require('./handlers/disciplinary_points_intent'
 const RoomAvailableHandler = require('./handlers/room_available_handler');
 const UpcomingEventsHandler = require('./handlers/upcoming_events_handler');
 const LevelXViolationIntent = require('./handlers/level_x_violation_intent');
+const WasherDryerIntents = require('./handlers/washer_dryer_intents');
 const messages = require('./messages');
 
 const LaunchRequestHandler = {
@@ -82,7 +83,11 @@ const IntentHandler = {
             return DisciplinaryPointsIntent(handlerInput);
         } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'LevelXViolationIntent'){
             return LevelXViolationIntent(handlerInput);
-        }
+        } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'WasherIntent'){
+            return WasherDryerIntents.WasherIntent(handlerInput);
+        } else if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'DryerIntent'){
+            return WasherDryerIntents.DryerIntent(handlerInput);
+        } 
     }
 }
 
