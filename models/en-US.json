@@ -5,15 +5,21 @@
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
-          "samples": []
+          "samples": [
+            "cancel"
+          ]
         },
         {
           "name": "AMAZON.HelpIntent",
-          "samples": []
+          "samples": [
+            "help"
+          ]
         },
         {
           "name": "AMAZON.StopIntent",
-          "samples": []
+          "samples": [
+            "stop"
+          ]
         },
         {
           "name": "HelloWorldIntent",
@@ -280,6 +286,11 @@
         },
         {
           "values": [
+            {
+              "name": {
+                "value": "bewley"
+              }
+            },
             {
               "name": {
                 "value": "TV room"
@@ -822,5 +833,5 @@
       }
     ]
   },
-  "version": "68"
+  "version": "84"
 }
