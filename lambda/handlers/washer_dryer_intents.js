@@ -5,6 +5,7 @@ const key = 'AIzaSyAn7K5TBf8B2EU9X0m275GOKu9u0qSjsd0'
 const doc = 'form_data/washers/'
 const url = `https://firestore.googleapis.com/v1beta1/projects/${projectID}/databases/(default)/documents/${doc}?key=${key}`
 
+// TODO: edit this for more than just these two dryers/washers.
 const washers = [1,2]
 const dryers = [1,2]
 

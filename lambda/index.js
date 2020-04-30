@@ -58,7 +58,17 @@ const CancelAndStopIntentHandler = {
  */
 const IntentHandler = {
     canHandle(handlerInput) {
-        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' 
+        && (Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'CurfewIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'IsOpenIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'RoomAvailableIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'DiscoveryIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'UpcomingEventsIntent' 
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'DisciplinaryPointsIntent' 
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'LevelXViolationIntent' 
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'WasherIntent'
+        || Alexa.getIntentName(handlerInput.requestEnvelope) === 'DryerIntent')
     },
     async handle(handlerInput) {
         if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent') {
