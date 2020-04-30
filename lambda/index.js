@@ -71,13 +71,13 @@ const IntentHandler = {
         || Alexa.getIntentName(handlerInput.requestEnvelope) === 'DryerIntent')
     },
     async handle(handlerInput) {
-        if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent') {
-            const speakOutput = 'Hello World!';
-            return handlerInput.responseBuilder
-            .speak(speakOutput)
-            //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
-            .getResponse();
-        }
+        // if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent') {
+        //     const speakOutput = 'Hello World!';
+        //     return handlerInput.responseBuilder
+        //     .speak(speakOutput)
+        //     //.reprompt('add a reprompt if you want to keep the session open for the user to respond')
+        //     .getResponse();
+        // }
         if (Alexa.getIntentName(handlerInput.requestEnvelope) === 'CurfewIntent') {
             return CurfewIntent(handlerInput);
         }
