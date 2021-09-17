@@ -5,3 +5,5 @@ run.sh
 testing.js
 updateskill.sh
 lambda/node_modules
+ask-resources.json
+.vscode
