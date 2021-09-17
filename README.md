@@ -3,7 +3,7 @@ https://devpost.com/software/tams-student-hub
 
 An Alexa skill to improve the residential life of students at TAMS by providing curfew times; the availability of dorm amenities such as the public rooms and washers and dryers; the availibility of UNT facilities such as the cafeterias, Pohl rec center, libraries, and bus times; and upcoming club events.
 
-# Goal
+## Goal
 
 The walk to the laundry room just to check if the washers and dryers are open is in the past. Now, all a resident has to do is ask Alexa! It's functions like these that contribute to the overall goal of the software to make life for students at McConnell much easier.
 
