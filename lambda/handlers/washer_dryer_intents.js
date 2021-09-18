@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
 const projectID = 'tamslaundry'
-const key = 'AIzaSyAn7K5TBf8B2EU9X0m275GOKu9u0qSjsd0'
+const key = process.env.KEY
 const doc = 'form_data/washers/'
 const url = `https://firestore.googleapis.com/v1beta1/projects/${projectID}/databases/(default)/documents/${doc}?key=${key}`
 
