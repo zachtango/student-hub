@@ -8,6 +8,7 @@
     "ask-sdk-core": "^2.6.0",
     "ask-sdk-model": "^1.18.0",
     "aws-sdk": "^2.326.0",
+    "dotenv": "^10.0.0",
     "node-fetch": "^2.6.0"
   },
   "devDependencies": {},
